@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "FlexDown - Video Downloader Module",
+  "version": "1.0.0",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "flexdown-downloader@local",
+      "strict_min_version": "109.0"
+    }
+  },
+  "description": "Download videos and audio directly from YouTube, TikTok, Facebook, Twitter, and any website with one click using FlexDown.",
+  "permissions": [
+    "downloads",
+    "activeTab",
+    "storage",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "token.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FlexDown Video Downloader",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

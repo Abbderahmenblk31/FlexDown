@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller build outputs
+build/
+dist/
+*.manifest
+
+# Unit test / coverage / caches
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.log
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Temporary media, audio tests, and download chunks
+*.part
+*.aria2
+*.wav
+test_*.mp3
+real_s*.mp3
+pro_voice.mp3
+neural_voice*.mp3
+s[1-7].mp3
+test_speed_run/
+
+# Large binaries (FFmpeg is >80MB; aria2c is ~5MB and can be kept)
+bin/ffmpeg.exe
+
+# Temporary test images / scripts
+asset_main_window.png
+dialog_crop.png
+dialog_fixed_render.png
+real_app_render.png
+url_bar_crop.png
+concat_list.txt
+gen_voice*.ps1
+
+# Operating System files
+Thumbs.db
+Desktop.ini
+.DS_Store

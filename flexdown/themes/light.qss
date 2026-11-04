@@ -1,0 +1,594 @@
+/* ===================================================================
+   FlexDown - نمط المظهر الفاتح (Light Theme QSS Fallback)
+   Color Palette:
+   - Primary Background: #f8f9fa (Clean off-white)
+   - Cards & Panels: #ffffff (Pure White)
+   - Accent Blue: #1976d2
+   - Accent Hover: #1565c0
+   - Accent Highlight: #0d6efd
+   - Border Color: #dcdfe6
+   - Text Primary: #2c3e50
+   - Text Muted: #6c757d
+   =================================================================== */
+
+/* --- النوافذ الأساسية وعناصر التحكم العامة --- */
+QWidget {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-family: "Segoe UI", "Tahoma", "Cairo", sans-serif;
+    font-size: 10pt;
+    selection-background-color: #1976d2;
+    selection-color: #ffffff;
+    outline: none;
+}
+
+QMainWindow {
+    background-color: #f8f9fa;
+}
+
+QDialog {
+    background-color: #ffffff;
+    border: 1px solid #dcdfe6;
+    border-radius: 8px;
+}
+
+/* --- الإطارات والتقسيمات (Frames & Splitters) --- */
+QFrame {
+    border: none;
+}
+
+QFrame#cardFrame, QFrame#sidebarFrame {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+QPushButton#detToggle {
+    text-align: left;
+    font-weight: bold;
+    color: #475569;
+    border: none;
+    background: transparent;
+    padding: 2px 4px;
+}
+
+QPushButton#detToggle:hover {
+    color: #0f172a;
+}
+
+QLabel#detTitle {
+    font-weight: bold;
+    color: #0f172a;
+    font-size: 10pt;
+}
+
+QLabel#detMuted {
+    color: #64748b;
+}
+
+QLabel#detStats {
+    color: #0284c7;
+    font-weight: 600;
+}
+
+QLabel#detStatus {
+    color: #e11d48;
+    font-weight: bold;
+}
+
+QLabel#statusActive {
+    color: #0284c7;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+QLabel#statusSpeed {
+    color: #e11d48;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+QLabel#statusDisk {
+    color: #64748b;
+    padding: 0 8px;
+}
+
+
+QSplitter::handle {
+    background-color: #dcdfe6;
+    margin: 1px;
+}
+
+QSplitter::handle:horizontal {
+    width: 3px;
+}
+
+QSplitter::handle:vertical {
+    height: 3px;
+}
+
+/* --- شريط القوائم والقوائم المنسدلة (MenuBar & Menu) --- */
+QMenuBar {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 3px 6px;
+}
+
+QMenuBar::item {
+    background: transparent;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+QMenuBar::item:selected {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+QMenuBar::item:pressed {
+    background-color: #bbdefb;
+    color: #0d47a1;
+}
+
+QMenu {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+QMenu::item {
+    padding: 7px 28px 7px 20px;
+    border-radius: 4px;
+    background: transparent;
+}
+
+QMenu::item:selected {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+QMenu::item:disabled {
+    color: #a0aec0;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 4px 8px;
+}
+
+/* --- شريط الأدوات (ToolBar & ToolButtons) --- */
+QToolBar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 4px 8px;
+    spacing: 6px;
+}
+
+QToolButton {
+    background-color: transparent;
+    color: #2c3e50;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-weight: 500;
+}
+
+QToolButton:hover {
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #1976d2;
+}
+
+QToolButton:pressed {
+    background-color: #e2e8f0;
+    color: #0d47a1;
+}
+
+QToolButton:checked {
+    background-color: #e3f2fd;
+    border: 1px solid #1976d2;
+    color: #1976d2;
+}
+
+QToolButton:disabled {
+    color: #cbd5e1;
+    background-color: transparent;
+}
+
+/* --- الأزرار العادية والمميزة (PushButtons) --- */
+QPushButton {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-weight: 600;
+    min-height: 20px;
+}
+
+QPushButton:hover {
+    background-color: #f8fafc;
+    border-color: #1976d2;
+    color: #1976d2;
+}
+
+QPushButton:pressed {
+    background-color: #e2e8f0;
+}
+
+QPushButton:disabled {
+    background-color: #f1f5f9;
+    color: #94a3b8;
+    border-color: #e2e8f0;
+}
+
+QPushButton#primaryButton, QPushButton#btnDownload, QPushButton[default="true"] {
+    background-color: #1976d2;
+    color: #ffffff;
+    border: 1px solid #1976d2;
+}
+
+QPushButton#primaryButton:hover, QPushButton#btnDownload:hover, QPushButton[default="true"]:hover {
+    background-color: #1565c0;
+    border-color: #1565c0;
+}
+
+QPushButton#primaryButton:pressed, QPushButton#btnDownload:pressed, QPushButton[default="true"]:pressed {
+    background-color: #0d47a1;
+    border-color: #0d47a1;
+}
+
+/* --- حقول الإدخال والنصوص (LineEdit & TextEdit) --- */
+QLineEdit, QTextEdit, QPlainTextEdit {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 7px 10px;
+    selection-background-color: #1976d2;
+    selection-color: #ffffff;
+}
+
+QLineEdit:focus, QTextEdit:focus, QPlainTextEdit:focus {
+    border: 1px solid #1976d2;
+    background-color: #ffffff;
+}
+
+QLineEdit:disabled, QTextEdit:disabled {
+    background-color: #f8fafc;
+    color: #94a3b8;
+    border-color: #e2e8f0;
+}
+
+/* --- القوائم المنسدلة (ComboBox) --- */
+QComboBox {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 6px 12px;
+    min-height: 22px;
+}
+
+QComboBox:hover {
+    border: 1px solid #1976d2;
+}
+
+QComboBox:focus {
+    border: 1px solid #1976d2;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 26px;
+    border-left: 1px solid #cbd5e1;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    selection-background-color: #e3f2fd;
+    selection-color: #1976d2;
+    padding: 4px;
+}
+
+/* --- مربعات الترقيم (SpinBox) --- */
+QSpinBox, QDoubleSpinBox {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+QSpinBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid #1976d2;
+}
+
+QSpinBox::up-button, QDoubleSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right;
+    width: 18px;
+    border-left: 1px solid #cbd5e1;
+    border-bottom: 1px solid #cbd5e1;
+    background: #f8fafc;
+    border-top-right-radius: 5px;
+}
+
+QSpinBox::down-button, QDoubleSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right;
+    width: 18px;
+    border-left: 1px solid #cbd5e1;
+    background: #f8fafc;
+    border-bottom-right-radius: 5px;
+}
+
+QSpinBox::up-button:hover, QDoubleSpinBox::up-button:hover,
+QSpinBox::down-button:hover, QDoubleSpinBox::down-button:hover {
+    background-color: #e2e8f0;
+}
+
+/* --- جدول التحميلات (TableWidget & HeaderView) --- */
+QTableWidget, QTableView {
+    background-color: #ffffff;
+    alternate-background-color: #f8fafc;
+    color: #2c3e50;
+    gridline-color: #e2e8f0;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    selection-background-color: #e3f2fd;
+    selection-color: #0d47a1;
+}
+
+QTableWidget::item {
+    padding: 6px 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+QTableWidget::item:selected {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+}
+
+QTableWidget::item:hover {
+    background-color: #f1f5f9;
+}
+
+QHeaderView::section {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 8px 10px;
+    border: none;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 2px solid #1976d2;
+    font-weight: 600;
+}
+
+QHeaderView::section:checked {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+QTableCornerButton::section {
+    background-color: #f1f5f9;
+    border: none;
+}
+
+/* --- أشرطة التقدم (ProgressBar) --- */
+QProgressBar {
+    background-color: #e2e8f0;
+    color: #2c3e50;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    min-height: 18px;
+    max-height: 18px;
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #42a5f5, stop:1 #1976d2);
+    border-radius: 5px;
+}
+
+/* --- التبويبات (TabWidget & TabBar) --- */
+QTabWidget::pane {
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    top: -1px;
+}
+
+QTabBar::tab {
+    background-color: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #cbd5e1;
+    border-bottom: none;
+    padding: 9px 20px;
+    margin-right: 2px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: 500;
+}
+
+QTabBar::tab:selected {
+    background-color: #ffffff;
+    color: #1976d2;
+    border-top: 3px solid #1976d2;
+    font-weight: 600;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+/* --- مربعات الاختيار وخيارات الراديو (CheckBox & RadioButton) --- */
+QCheckBox, QRadioButton {
+    spacing: 8px;
+    color: #2c3e50;
+}
+
+QCheckBox:hover, QRadioButton:hover {
+    color: #0f172a;
+}
+
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+QRadioButton::indicator {
+    border-radius: 9px;
+}
+
+QCheckBox::indicator:hover, QRadioButton::indicator:hover {
+    border-color: #1976d2;
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: #1976d2;
+    border-color: #1976d2;
+}
+
+/* --- مجموعات العناصر (GroupBox) --- */
+QGroupBox {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin-top: 14px;
+    padding-top: 16px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 2px 10px;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    color: #1976d2;
+}
+
+/* --- أشرطة التمرير (ScrollBar) --- */
+QScrollBar:vertical {
+    background: #f1f5f9;
+    width: 10px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background: #cbd5e1;
+    min-height: 25px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #94a3b8;
+}
+
+QScrollBar::handle:vertical:pressed {
+    background: #64748b;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar:horizontal {
+    background: #f1f5f9;
+    height: 10px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #cbd5e1;
+    min-width: 25px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #94a3b8;
+}
+
+QScrollBar::handle:horizontal:pressed {
+    background: #64748b;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+
+/* --- شريط الحالة السفلي (StatusBar) --- */
+QStatusBar {
+    background-color: #ffffff;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+}
+
+QStatusBar::item {
+    border: none;
+    padding: 2px 6px;
+}
+
+QStatusBar QLabel {
+    color: #64748b;
+}
+
+/* --- منزلق السرعة والتحكم (QSlider) --- */
+QSlider::groove:horizontal {
+    border: 1px solid #cbd5e1;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #1976d2;
+    border-radius: 3px;
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;
+    border: 2px solid #1976d2;
+    width: 16px;
+    margin-top: -6px;
+    margin-bottom: -6px;
+    border-radius: 8px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #1976d2;
+}
+
+/* --- تلميحات الأدوات (ToolTip) --- */
+QToolTip {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: 1px solid #1976d2;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* --- قائمة شريط المهام (System Tray Menu) --- */
+QSystemTrayIcon QMenu {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+}

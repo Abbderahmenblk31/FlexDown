@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlexDown Integration</title>
+    <style>
+        body {
+            width: 320px;
+            margin: 0;
+            padding: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            box-sizing: border-box;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .status-badge {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+        .status-badge.offline {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 14px;
+            font-size: 12px;
+        }
+
+        .page-title {
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .page-url {
+            color: #64748b;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 11px;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.15s ease;
+        }
+
+        .btn-video {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+        }
+        .btn-video:hover {
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+        }
+
+        .btn-audio {
+            background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+            color: #ffffff;
+        }
+        .btn-audio:hover {
+            background: linear-gradient(135deg, #be123c 0%, #9f1239 100%);
+        }
+
+        .feedback {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+            display: none;
+        }
+        .feedback.success { color: #10b981; }
+        .feedback.error { color: #ef4444; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="icons/logo.png" alt="FlexDown" />
+        <div>
+            <div class="title">FlexDown Downloader</div>
+            <div id="statusBadge" class="status-badge">Checking connection...</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div id="pageTitle" class="page-title">Loading tab...</div>
+        <div id="pageUrl" class="page-url">--</div>
+    </div>
+
+    <div class="actions">
+        <button id="btnDlVideo" class="btn-video">
+            <span>🎬</span> Download Video (MP4)
+        </button>
+        <button id="btnDlAudio" class="btn-audio">
+            <span>🎵</span> Download Audio (MP3)
+        </button>
+    </div>
+
+    <div id="feedback" class="feedback"></div>
+
+    <script src="token.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
